@@ -1,0 +1,843 @@
+PROMPT MAESTRO DE DESARROLLO DE SOFTWARE
+PROYECTO: OBSERVADOR VIRTUAL
+Sistema integral de gestión de convivencia escolar del Instituto Universitario de Caldas
+
+1. ROL Y PERFIL PROFESIONAL
+Actúa como un equipo multidisciplinario de desarrollo de software de nivel profesional, integrado por:
+Un arquitecto de software especializado en aplicaciones web modernas.
+Un desarrollador senior especializado en React, TypeScript y JavaScript.
+Un ingeniero backend especializado en Supabase y PostgreSQL.
+Un especialista en diseño UX/UI y experiencia de usuario.
+Un ingeniero de bases de datos especializado en modelado relacional, integridad referencial y seguridad.
+Un especialista en ciberseguridad y protección de datos personales.
+Un analista de sistemas encargado de verificar requerimientos, historias de usuario y casos de uso.
+Tu responsabilidad es diseñar y desarrollar una aplicación web completa, funcional, escalable y profesional denominada OBSERVADOR VIRTUAL.
+No debes limitarte a generar una demostración visual, un conjunto de pantallas estáticas o un prototipo sin funcionalidad.
+Debes construir un producto de software coherente, con frontend, backend, autenticación, persistencia de datos, gestión de permisos y una arquitectura preparada para su implementación real.
+Piensa como si estuvieras desarrollando un sistema que posteriormente será evaluado por un equipo técnico y presentado a las directivas de una institución educativa.
+2. CONTEXTO GENERAL DEL PROYECTO
+El proyecto Observador Virtual es una propuesta tecnológica desarrollada para el Instituto Universitario de Caldas, ubicado en Manizales, Caldas, Colombia.
+Autores:
+Stiven Riofrio.
+Mariana Mesa.
+Grupo: 11-1.
+Área: Programación.
+Docente orientador: Diego Eddye Hurtado.
+2.1. Problemática
+Tradicionalmente, las instituciones educativas utilizan un observador del estudiante en formato físico para registrar situaciones relacionadas con el comportamiento, la convivencia y el desempeño académico.
+Este mecanismo presenta diferentes dificultades:
+Los documentos pueden deteriorarse o extraviarse.
+La información se encuentra dispersa y escrita manualmente.
+Consultar el historial de un estudiante requiere revisar numerosos registros.
+No existe un control adecuado sobre quién puede consultar la información.
+Se dificulta generar informes y consultar antecedentes.
+Se consume tiempo y espacio en actividades que pueden digitalizarse.
+Estas limitaciones afectan la organización institucional, la trazabilidad de los registros y la disponibilidad de información para docentes, coordinadores, orientadores y directivos.
+2.2. Solución propuesta
+Desarrollar una plataforma web denominada Observador Virtual que permita digitalizar la gestión de observaciones disciplinarias y académicas.
+Cada estudiante tendrá un historial individual denominado folio digital, en el que se almacenarán sus registros y actuaciones institucionales.
+La plataforma permitirá:
+Registrar observaciones académicas y disciplinarias.
+Consultar el historial individual de los estudiantes.
+Gestionar procesos de convivencia.
+Incorporar evidencias documentales.
+Gestionar firmas y constancias de conocimiento.
+Generar documentos institucionales imprimibles.
+Administrar estudiantes, docentes, acudientes y funcionarios.
+Generar informes para reuniones y comités de convivencia.
+Controlar el acceso según los diferentes roles institucionales.
+El sistema debe funcionar en línea y disponer de una arquitectura que permita su utilización desde distintos dispositivos.
+3. REGLA FUNDAMENTAL: ANALIZAR LOS ARCHIVOS ADJUNTOS
+Antes de comenzar a programar, analiza detalladamente TODOS los archivos que proporcionaré junto con este prompt.
+Los archivos pueden contener:
+Informe del proyecto.
+Requerimientos funcionales.
+Requerimientos no funcionales.
+Historias de usuario.
+Casos de uso.
+Wireframes.
+Diagramas.
+Bocetos de interfaces.
+Documentación adicional.
+Debes seguir este procedimiento:
+Fase 1. Análisis documental
+Examina cada archivo adjunto.
+Identifica los requerimientos y funcionalidades.
+Extrae las historias de usuario y sus criterios de aceptación.
+Analiza los casos de uso.
+Examina visualmente los wireframes.
+Identifica las relaciones entre los diferentes módulos.
+Detecta posibles contradicciones entre documentos.
+Identifica información que todavía no esté definida.
+Fase 2. Consolidación
+Construye una especificación funcional unificada.
+Los documentos adjuntos son la fuente principal de verdad sobre el proyecto.
+No inventes requerimientos institucionales, procesos disciplinarios, normas internas ni funcionalidades que contradigan los documentos.
+Cuando existan vacíos de información, plantea soluciones técnicas razonables y señala claramente cuáles son decisiones de diseño propuestas y cuáles están documentadas.
+Fase 3. Implementación
+Una vez comprendido el proyecto, desarrolla la aplicación completa.
+No ignores funcionalidades importantes de los documentos por simplificar el desarrollo.
+Las interfaces deben respetar los wireframes cuando estos estén disponibles, pero puedes mejorar su presentación visual y experiencia de usuario sin alterar su propósito funcional.
+4. TECNOLOGÍAS Y STACK DE DESARROLLO OBLIGATORIO
+La aplicación debe desarrollarse exclusivamente utilizando tecnologías web fundamentales, sin frameworks frontend.
+Frontend
+Tecnologías obligatorias:
+HTML5 para la estructura semántica.
+CSS3 para todos los estilos visuales.
+JavaScript Vanilla (ES6+) para la lógica y funcionalidades.
+Lucide Icons para iconografía, si resulta necesario.
+Restricciones tecnológicas
+ESTÁ PROHIBIDO UTILIZAR:
+React.
+Angular.
+Vue.
+Svelte.
+TypeScript.
+Next.js.
+Vite.
+Tailwind CSS.
+Bootstrap.
+Frameworks frontend o herramientas que sustituyan el desarrollo solicitado en HTML, CSS y JavaScript puro.
+El proyecto debe construirse mediante archivos independientes y organizados:
+index.html
+styles.css
+app.js
+Puedes crear múltiples archivos HTML, CSS y JavaScript para separar módulos y responsabilidades.
+No concentres toda la aplicación en un único archivo.
+Utiliza JavaScript moderno, funciones reutilizables, módulos ES6, async/await y separación de responsabilidades.
+Backend y base de datos
+Utiliza Supabase como backend:
+Supabase Authentication.
+PostgreSQL.
+Supabase Storage.
+Row Level Security (RLS).
+Supabase Edge Functions cuando sean necesarias.
+Utiliza el cliente oficial de JavaScript de Supabase mediante su SDK compatible con JavaScript Vanilla.
+La aplicación debe conectarse realmente a Supabase.
+No simules las consultas ni utilices únicamente información almacenada en variables locales.
+Organización del proyecto
+Utiliza una estructura similar a esta:
+observador-virtual/
+│
+├── index.html
+├── login.html
+├── dashboard.html
+├── estudiantes.html
+├── observaciones.html
+├── informes.html
+│
+├── css/
+│ ├── styles.css
+│ ├── dashboard.css
+│ ├── forms.css
+│ └── responsive.css
+│
+├── js/
+│ ├── app.js
+│ ├── supabase.js
+│ ├── auth.js
+│ ├── permissions.js
+│ ├── students.js
+│ ├── observations.js
+│ ├── reports.js
+│ ├── signatures.js
+│ └── utils.js
+│
+├── assets/
+│ ├── images/
+│ └── icons/
+│
+├── supabase/
+│ └── migrations/
+│ ├── 001_initial_schema.sql
+│ ├── 002_relationships.sql
+│ ├── 003_indexes.sql
+│ ├── 004_rls_policies.sql
+│ ├── 005_storage_policies.sql
+│ └── 006_seed_data.sql
+│
+├── .env.example
+└── README.md
+Puedes modificar esta estructura para mejorar la organización, siempre conservando HTML5, CSS3 y JavaScript Vanilla como tecnologías del frontend.
+IMPORTANTE: No confundas una aplicación multipágina con una página estática. Cada módulo debe tener funcionalidades reales, navegación coherente y conexión con Supabase.
+
+5. ARQUITECTURA GENERAL DEL SISTEMA
+Implementa una arquitectura modular organizada por funcionalidades.
+Estructura de referencia:
+src/
+│
+├── assets/
+│ ├── images/
+│ └── icons/
+│
+├── components/
+│ ├── ui/
+│ ├── layout/
+│ ├── navigation/
+│ ├── forms/
+│ ├── tables/
+│ └── shared/
+│
+├── pages/
+│ ├── auth/
+│ ├── dashboard/
+│ ├── students/
+│ ├── observations/
+│ ├── reports/
+│ ├── users/
+│ ├── signatures/
+│ ├── notifications/
+│ └── settings/
+│
+├── modules/
+│ ├── students/
+│ ├── observations/
+│ ├── disciplinary/
+│ ├── academic/
+│ ├── guardians/
+│ ├── reports/
+│ └── administration/
+│
+├── hooks/
+├── services/
+├── contexts/
+├── lib/
+│ ├── supabase.ts
+│ └── validations/
+│
+├── types/
+├── utils/
+├── routes/
+└── App.tsx
+supabase/
+│
+├── migrations/
+│ ├── 001_initial_schema.sql
+│ ├── 002_relationships.sql
+│ ├── 003_indexes.sql
+│ ├── 004_rls_policies.sql
+│ ├── 005_storage_policies.sql
+│ └── 006_seed_data.sql
+│
+└── config.toml
+Esta estructura es una referencia. Puedes mejorarla si existe una justificación arquitectónica.
+Evita concentrar toda la aplicación en App.tsx o crear archivos gigantescos con múltiples responsabilidades.
+6. SISTEMA DE ROLES Y PERMISOS
+El sistema contempla seis roles principales:
+Administrador.
+Coordinador.
+Docente.
+Orientador.
+Estudiante.
+Acudiente.
+Cada usuario debe tener permisos diferenciados.
+Implementa un sistema de autorización basado en roles (RBAC).
+6.1. Administrador
+Responsabilidades:
+Gestionar usuarios.
+Crear y editar cuentas institucionales.
+Asignar roles.
+Administrar estudiantes.
+Administrar docentes y funcionarios.
+Gestionar cursos y grupos.
+Configurar parámetros generales.
+Consultar registros de auditoría.
+Administrar permisos y configuraciones.
+6.2. Coordinador
+Responsabilidades:
+Consultar observaciones institucionales según sus permisos.
+Supervisar registros realizados por docentes.
+Consultar historiales de estudiantes.
+Gestionar situaciones de convivencia.
+Dar seguimiento a procesos disciplinarios.
+Generar informes institucionales.
+Consultar evidencias y documentos autorizados.
+6.3. Docente
+Responsabilidades:
+Consultar los estudiantes de sus grupos asignados.
+Crear observaciones académicas y disciplinarias.
+Consultar el historial permitido de sus estudiantes.
+Adjuntar evidencias.
+Consultar el estado de sus registros.
+Gestionar las constancias de conocimiento y firmas correspondientes.
+6.4. Orientador
+Responsabilidades:
+Consultar los casos asignados o autorizados.
+Realizar seguimiento a situaciones de convivencia.
+Registrar actuaciones de orientación.
+Documentar procesos de acompañamiento.
+Consultar antecedentes pertinentes para su labor.
+Los registros de orientación deben manejar permisos especialmente restrictivos. No deben quedar visibles automáticamente para todos los docentes, estudiantes o acudientes.
+6.5. Estudiante
+Responsabilidades:
+Consultar su propio folio digital.
+Consultar observaciones que estén autorizadas para su visualización.
+Consultar el estado de las observaciones.
+Consultar documentos disponibles.
+Conocer las actuaciones institucionales relacionadas con su proceso.
+Un estudiante nunca debe poder consultar los historiales de otros estudiantes.
+6.6. Acudiente
+Responsabilidades:
+Consultar únicamente los estudiantes vinculados a su cuenta.
+Consultar observaciones autorizadas.
+Revisar documentos y comunicaciones.
+Consultar solicitudes de firma pendientes.
+Realizar constancias de conocimiento cuando corresponda.
+Consultar el estado de los procesos autorizados.
+La vinculación entre acudientes y estudiantes debe estar controlada desde la base de datos.
+IMPORTANTE:
+No basta con esconder opciones del menú.
+Cada permiso debe verificarse también en el backend y mediante políticas RLS de Supabase.
+No permitas que un usuario modifique su propio rol desde el frontend.
+La asignación de roles debe realizarse mediante operaciones autorizadas del servidor.
+7. MÓDULOS PRINCIPALES DE LA APLICACIÓN
+Desarrolla los siguientes módulos, ajustándolos a los documentos adjuntos.
+7.1. Autenticación
+Construye una pantalla de inicio de sesión profesional.
+Debe incluir:
+Correo electrónico.
+Contraseña.
+Mostrar u ocultar contraseña.
+Recuperación de contraseña.
+Validación de campos.
+Manejo de errores.
+Persistencia segura de sesión.
+Redirección según el rol.
+Cierre de sesión.
+Utiliza Supabase Auth.
+No implementes contraseñas manuales ni almacenamiento de contraseñas en texto plano.
+La plataforma debe permitir que los usuarios accedan exclusivamente a las funciones autorizadas para su perfil.
+7.2. Dashboard principal
+Desarrolla un panel de control que cambie según el rol del usuario.
+El dashboard debe ofrecer información relevante sin saturar la interfaz.
+Posibles indicadores:
+Total de estudiantes registrados.
+Observaciones registradas.
+Observaciones recientes.
+Casos pendientes de seguimiento.
+Firmas pendientes.
+Casos atendidos.
+Actividad reciente.
+No todos los indicadores deben estar disponibles para todos los roles.
+Incluye:
+Tarjetas estadísticas.
+Gráficos cuando aporten valor.
+Listados de actividad reciente.
+Accesos rápidos.
+Notificaciones.
+Filtros temporales.
+Todos los indicadores deben obtener información real de Supabase.
+7.3. Gestión de estudiantes
+Construye un módulo completo de administración estudiantil.
+Debe permitir:
+Registrar estudiantes.
+Editar información autorizada.
+Consultar estudiantes.
+Buscar por nombre o identificación.
+Filtrar por grado y grupo.
+Consultar información académica.
+Consultar acudientes vinculados.
+Consultar el folio digital.
+Cada estudiante debe contar con un perfil individual.
+Incluye una ficha de estudiante con:
+Información básica.
+Identificación.
+Grado.
+Grupo.
+Estado de matrícula.
+Información de contacto cuando corresponda.
+Acudientes vinculados.
+Historial de observaciones.
+Documentos autorizados.
+No expongas información personal innecesaria.
+7.4. Folio digital del estudiante
+Este es uno de los módulos más importantes del proyecto.
+Cada estudiante debe contar con un expediente digital que centralice sus observaciones académicas y disciplinarias.
+Debe presentar:
+Información del estudiante.
+Historial cronológico.
+Fecha de cada observación.
+Categoría.
+Descripción.
+Docente responsable.
+Evidencias disponibles.
+Actuaciones institucionales.
+Estado del proceso.
+Constancias de conocimiento.
+Documentos asociados.
+El historial debe ser fácil de consultar.
+Incluye filtros por:
+Fecha.
+Tipo de observación.
+Estado.
+Docente.
+Categoría.
+Los registros históricos no deben desaparecer cuando se edite información del estudiante.
+Conserva la trazabilidad de las modificaciones.
+7.5. Registro de observaciones
+Desarrolla un formulario completo para registrar observaciones.
+Campos sugeridos:
+Estudiante.
+Fecha y hora.
+Tipo de observación.
+Categoría.
+Descripción de los hechos.
+Contexto de la situación.
+Acciones pedagógicas realizadas.
+Compromisos establecidos.
+Docente responsable.
+Evidencias adjuntas.
+Personas que deben conocer el registro.
+Clasifica los registros según su naturaleza:
+Académicos.
+Disciplinarios.
+Convivencia escolar.
+Seguimiento institucional.
+Las categorías definitivas deben ajustarse a los documentos y al Manual de Convivencia.
+Incluye validaciones y confirmación antes de guardar.
+Los registros deben generar un identificador único.
+No permitas modificar silenciosamente observaciones ya registradas. Implementa un mecanismo de auditoría y registro de cambios.
+7.6. Gestión de procesos de convivencia
+Desarrolla un módulo para realizar seguimiento a situaciones institucionales.
+Debe permitir:
+Identificar el caso.
+Consultar observaciones relacionadas.
+Registrar actuaciones.
+Asignar responsables.
+Registrar compromisos.
+Consultar el estado.
+Documentar seguimientos.
+Adjuntar documentos autorizados.
+Los estados pueden incluir:
+Abierto.
+En seguimiento.
+Pendiente de actuación.
+Cerrado.
+Estos estados son propuestas iniciales y deben ajustarse a los procedimientos institucionales documentados.
+No automatices sanciones ni clasificaciones disciplinarias.
+Las decisiones institucionales deben permanecer bajo responsabilidad de las personas autorizadas.
+7.7. Gestión de acudientes y firmas
+Implementa un sistema para relacionar estudiantes con sus acudientes.
+Debe permitir:
+Registrar acudientes.
+Vincularlos con uno o varios estudiantes.
+Consultar las relaciones existentes.
+Gestionar solicitudes de conocimiento.
+Consultar firmas pendientes.
+Consultar constancias completadas.
+Implementa un flujo de firma o constancia electrónica con:
+Identificación del documento.
+Usuario que realiza la acción.
+Fecha y hora.
+Estado.
+Registro de aceptación.
+Evidencia de integridad del documento.
+IMPORTANTE:
+No presentes una casilla de aceptación o una firma dibujada como si automáticamente fuera una firma digital certificada o tuviera validez jurídica garantizada.
+Diseña el módulo de forma que pueda integrarse posteriormente con un proveedor de firma electrónica o digital, cuando la institución determine los requisitos correspondientes.
+El sistema debe poder generar documentos PDF imprimibles para los casos que requieran firma física.
+7.8. Gestión documental
+Implementa un módulo de documentos utilizando Supabase Storage.
+Debe permitir:
+Adjuntar evidencias.
+Consultar documentos autorizados.
+Descargar documentos permitidos.
+Generar documentos institucionales.
+Gestionar archivos PDF.
+Controlar el acceso a archivos.
+Utiliza buckets privados.
+Los archivos deben consultarse mediante permisos y enlaces temporales cuando corresponda.
+No utilices buckets públicos para almacenar observaciones, evidencias o documentos personales de estudiantes.
+7.9. Informes y reportes
+Desarrolla un módulo para generar informes institucionales.
+Debe permitir filtrar por:
+Estudiante.
+Grupo.
+Grado.
+Fecha.
+Tipo de observación.
+Estado.
+Docente.
+Incluye:
+Informe individual del estudiante.
+Historial cronológico.
+Informe por grupo.
+Informe por periodo.
+Resumen de observaciones.
+Reportes para comités de convivencia.
+Permite exportar documentos en PDF.
+Cuando corresponda, también permite exportar información en CSV, respetando los permisos de acceso.
+Los informes deben presentar:
+Nombre institucional.
+Información del estudiante.
+Fecha de generación.
+Registros correspondientes.
+Identificación del responsable.
+Espacios para firmas cuando sean necesarios.
+El diseño debe ser limpio, formal y apto para impresión.
+7.10. Notificaciones
+Implementa un módulo de notificaciones.
+Debe permitir notificar:
+Nuevas observaciones disponibles.
+Solicitudes de conocimiento.
+Firmas pendientes.
+Actualizaciones de casos.
+Nuevas actuaciones institucionales.
+Las notificaciones deben respetar los permisos y no mostrar información confidencial en su contenido visible.
+7.11. Auditoría
+Implementa un registro de auditoría para las operaciones importantes.
+Debe almacenar:
+Usuario responsable.
+Acción realizada.
+Fecha y hora.
+Tipo de registro afectado.
+Identificador del registro.
+Información pertinente del cambio.
+Evita almacenar contraseñas, tokens o información sensible innecesaria en los registros de auditoría.
+La auditoría debe impedir que usuarios ordinarios modifiquen o eliminen los registros históricos.
+8. DISEÑO DE BASE DE DATOS SQL PARA SUPABASE
+Esta sección es OBLIGATORIA.
+No quiero únicamente una explicación de cómo podría ser la base de datos.
+Necesito que generes el modelo relacional completo y el código SQL ejecutable en Supabase.
+Utiliza PostgreSQL.
+8.1. Modelo de datos
+Diseña las tablas necesarias para representar correctamente las entidades del sistema.
+Como mínimo, analiza la necesidad de las siguientes:
+profiles.
+roles.
+user_roles.
+students.
+guardians.
+student_guardians.
+teachers.
+academic_years.
+grades.
+groups.
+group_students.
+teacher_assignments.
+observations.
+observation_categories.
+observation_evidence.
+disciplinary_cases.
+case_followups.
+commitments.
+signatures.
+documents.
+notifications.
+audit_logs.
+Puedes modificar, dividir, combinar o ampliar las tablas cuando exista una justificación técnica.
+No crees tablas innecesarias.
+8.2. Relaciones
+Define correctamente:
+Relaciones uno a uno.
+Relaciones uno a muchos.
+Relaciones muchos a muchos.
+Utiliza:
+PRIMARY KEY.
+FOREIGN KEY.
+UNIQUE.
+NOT NULL.
+CHECK.
+DEFAULT.
+ON DELETE y ON UPDATE apropiados.
+Evita duplicación innecesaria de información.
+Garantiza la integridad referencial.
+8.3. Seguridad RLS
+Implementa Row Level Security en todas las tablas que contengan información institucional o personal.
+Define políticas diferenciadas para cada rol.
+Ejemplos:
+Un estudiante solo puede consultar sus propios registros autorizados.
+Un acudiente solo puede consultar información de sus estudiantes vinculados.
+Un docente solo puede realizar operaciones sobre estudiantes y grupos dentro de su ámbito autorizado.
+Un orientador solo puede consultar casos asignados o expresamente autorizados.
+Un coordinador puede consultar los registros dentro de sus competencias institucionales.
+El administrador puede gestionar la plataforma según sus privilegios.
+Evita políticas excesivamente permisivas.
+No utilices políticas como USING (true) para información privada.
+Implementa funciones auxiliares seguras cuando sean necesarias para comprobar roles y relaciones.
+Evita recursividad en las políticas RLS.
+Nunca expongas la SUPABASE_SERVICE_ROLE_KEY en el frontend.
+La clave anon/publishable puede utilizarse en el cliente siempre que la seguridad esté correctamente implementada mediante RLS.
+8.4. Supabase Storage
+Configura políticas de acceso para:
+Evidencias.
+Documentos institucionales.
+Archivos de observaciones.
+Documentos generados.
+Organiza los archivos por identificadores y carpetas lógicas.
+Evita utilizar nombres de estudiantes o documentos de identidad en las rutas de almacenamiento cuando no sea necesario.
+8.5. Entregables SQL
+Genera:
+Script de creación de tablas.
+Script de relaciones.
+Script de índices.
+Script de restricciones.
+Script de funciones.
+Script de triggers.
+Script de políticas RLS.
+Script de políticas Storage.
+Script de datos iniciales de demostración.
+Organiza todo mediante migraciones SQL independientes y ordenadas.
+El proyecto debe poder configurarse desde un proyecto nuevo de Supabase siguiendo las instrucciones proporcionadas.
+Incluye también un diagrama entidad-relación que permita comprender visualmente la estructura de la base de datos.
+9. DISEÑO VISUAL Y EXPERIENCIA DE USUARIO
+Quiero una interfaz de nivel profesional.
+No quiero una página genérica que parezca una plantilla gratuita sin personalidad.
+El diseño debe transmitir:
+Confianza.
+Seguridad.
+Organización.
+Profesionalismo.
+Modernidad.
+Identidad institucional.
+9.1. Identidad visual
+Diseña una identidad visual propia para Observador Virtual.
+Utiliza una paleta sobria y moderna:
+Azul oscuro como color principal.
+Azul institucional como color secundario.
+Blanco para superficies principales.
+Gris claro para fondos.
+Gris oscuro para textos.
+Colores semánticos discretos para estados y alertas.
+Puedes proponer los valores HEX de la paleta.
+No utilices colores excesivamente saturados ni una estética infantil.
+El sistema está dirigido a una comunidad educativa, por lo que debe ser moderno sin perder formalidad.
+9.2. Interfaz principal
+Implementa:
+Sidebar lateral adaptable.
+Barra superior.
+Identificación del usuario.
+Menú de navegación.
+Área de contenido.
+Tarjetas informativas.
+Tablas profesionales.
+Formularios organizados.
+Ventanas modales.
+Notificaciones visuales.
+Estados de carga.
+Estados vacíos.
+Mensajes de error.
+El menú debe cambiar dinámicamente según el rol.
+9.3. Diseño responsive
+La aplicación debe funcionar correctamente en:
+Computadores de escritorio.
+Portátiles.
+Tabletas.
+Celulares.
+En dispositivos pequeños, adapta la navegación a un menú compacto.
+No permitas que las tablas o formularios desborden horizontalmente.
+9.4. Calidad visual
+Presta especial atención a:
+Jerarquía tipográfica.
+Espaciado.
+Consistencia.
+Alineación.
+Contraste.
+Legibilidad.
+Iconografía.
+Estados interactivos.
+Transiciones discretas.
+Utiliza animaciones moderadas.
+Evita efectos innecesarios, exceso de sombras y elementos decorativos que dificulten la lectura.
+La experiencia debe sentirse como un software institucional terminado.
+10. SEGURIDAD Y PROTECCIÓN DE DATOS
+El proyecto debe considerar la Ley 1581 de 2012 de Colombia y las disposiciones aplicables sobre protección de datos personales.
+Ten presente que la plataforma manejará información de menores de edad.
+Por tanto:
+Minimiza la información recopilada.
+Restringe los datos según el rol.
+Implementa autenticación segura.
+Protege los documentos almacenados.
+Evita exponer información personal.
+Mantén trazabilidad de las operaciones.
+Evita accesos no autorizados.
+Implementa validación tanto en frontend como backend.
+Ten especial cuidado con los datos de orientación y acompañamiento.
+No presentes la implementación técnica como una certificación automática de cumplimiento legal.
+La institución deberá revisar las finalidades del tratamiento, autorizaciones, avisos de privacidad, conservación de datos y procedimientos correspondientes.
+11. CALIDAD DEL CÓDIGO
+Aplica buenas prácticas de ingeniería de software.
+Requisitos:
+TypeScript estricto.
+Componentes reutilizables.
+Funciones pequeñas y especializadas.
+Separación entre presentación y lógica.
+Servicios independientes para Supabase.
+Validación de formularios.
+Manejo centralizado de errores.
+Estados de carga.
+Manejo de sesiones.
+Protección de rutas.
+Tipado de entidades.
+Código legible.
+Nombres descriptivos.
+No utilices:
+Código duplicado innecesariamente.
+Información institucional inventada.
+Contraseñas escritas directamente en el código.
+Credenciales privadas expuestas.
+Botones sin funcionalidad.
+Enlaces rotos.
+Formularios que no guarden información.
+Datos ficticios presentados como datos reales.
+Funcionalidades simuladas como si estuvieran conectadas al backend.
+Si una funcionalidad depende de una integración externa todavía no configurada, implementa una estructura preparada para ella y explica qué falta para activarla.
+12. EXPERIENCIA DE PRUEBA Y DATOS DE DEMOSTRACIÓN
+Prepara un entorno de demostración.
+Incluye datos ficticios claramente identificados como datos de prueba.
+Puedes crear:
+Estudiantes de demostración.
+Docentes de prueba.
+Grupos académicos.
+Observaciones ficticias.
+Casos de seguimiento.
+Notificaciones.
+Ejemplos de documentos.
+No utilices datos personales reales de estudiantes.
+Prepara una estrategia para probar los seis roles y verificar sus permisos.
+No dejes cuentas administrativas con contraseñas predeterminadas en producción.
+13. PRUEBAS Y VALIDACIÓN
+Verifica el funcionamiento de la aplicación.
+Realiza pruebas de:
+Inicio de sesión.
+Cierre de sesión.
+Recuperación de contraseña.
+Redirección por roles.
+Creación de estudiantes.
+Registro de observaciones.
+Consulta de historiales.
+Gestión de acudientes.
+Subida de evidencias.
+Generación de informes.
+Gestión de firmas.
+Notificaciones.
+Protección RLS.
+Adaptación responsive.
+Prueba especialmente que un usuario no pueda acceder a información de otro estudiante mediante consultas directas a Supabase.
+Verifica que las funcionalidades estén conectadas a la base de datos y que los errores sean manejados correctamente.
+14. CONFIGURACIÓN Y CONEXIÓN CON SUPABASE
+Prepara el proyecto para conectarlo a Supabase.
+Genera un archivo:
+.env.example
+Debe incluir las variables necesarias, por ejemplo:
+VITE_SUPABASE_URL=
+VITE_SUPABASE_ANON_KEY=
+Utiliza los nombres de variables recomendados por la versión de Supabase que implementes.
+Crea un archivo de conexión independiente:
+src/lib/supabase.ts
+Centraliza las operaciones de acceso a datos mediante servicios.
+No introduzcas credenciales reales.
+Explica detalladamente:
+Cómo crear un proyecto en Supabase.
+Cómo ejecutar las migraciones SQL.
+Cómo configurar Storage.
+Cómo configurar las variables de entorno.
+Cómo crear los usuarios iniciales.
+Cómo asignar los roles.
+Cómo ejecutar el proyecto localmente.
+Cómo verificar la conexión.
+Cómo desplegar la aplicación.
+15. DESPLIEGUE
+Prepara la aplicación para su publicación mediante Vercel.
+Incluye:
+Configuración de build.
+Configuración de rutas SPA.
+Variables de entorno.
+Configuración de producción.
+Recomendaciones de seguridad.
+El proyecto debe poder descargarse, abrirse en Visual Studio Code y ejecutarse mediante los comandos correspondientes.
+Debe quedar preparado para conectarse a un repositorio de GitHub.
+16. ENTREGABLES OBLIGATORIOS
+Al finalizar el desarrollo necesito los siguientes elementos:
+A. Aplicación frontend
+Aplicación React funcional con TypeScript.
+B. Backend
+Integración real con Supabase.
+C. Base de datos
+Modelo relacional completo y scripts SQL ejecutables.
+D. Seguridad
+Autenticación, autorización y políticas RLS.
+E. Documentación
+README.md que explique instalación, configuración, ejecución y despliegue.
+F. Modelo entidad-relación
+Diagrama visual de las tablas y sus relaciones.
+G. Variables de entorno
+Archivo .env.example.
+H. Datos de prueba
+Script de datos ficticios para validar el funcionamiento.
+I. Pruebas
+Verificación de las funcionalidades y los permisos de los seis roles.
+17. METODOLOGÍA DE DESARROLLO
+Desarrolla el proyecto de manera ordenada.
+Sigue estas etapas:
+FASE 1: Análisis de documentos y requerimientos.
+FASE 2: Diseño de arquitectura y modelo de datos.
+FASE 3: Diseño de identidad visual y componentes.
+FASE 4: Desarrollo de autenticación y permisos.
+FASE 5: Desarrollo de módulos principales.
+FASE 6: Integración con Supabase.
+FASE 7: Implementación de informes y documentos.
+FASE 8: Pruebas funcionales y de seguridad.
+FASE 9: Documentación y preparación para despliegue.
+No avances dejando funcionalidades anteriores rotas.
+Verifica que cada módulo funcione antes de considerar terminada su implementación.
+18. INSTRUCCIONES CRÍTICAS PARA GOOGLE AI STUDIO
+Estas instrucciones tienen prioridad durante todo el desarrollo:
+No simplifiques el proyecto hasta convertirlo en una demostración básica.
+No reemplaces HTML5, CSS3 y JavaScript Vanilla por React ni ningún otro framework. El desarrollo debe respetar estrictamente las tecnologías exigidas.
+No generes solamente una interfaz visual.
+No inventes funcionalidades institucionales que contradigan los documentos.
+No omitas el diseño de la base de datos.
+No omitas los scripts SQL.
+No omitas las políticas RLS.
+No simules la conexión con Supabase.
+No dejes botones sin acciones.
+No utilices información ficticia como información institucional real.
+No concentres toda la aplicación en un solo archivo.
+No expongas credenciales privadas.
+No permitas que los usuarios consulten información fuera de sus permisos.
+No afirmes que una firma electrónica tiene validez jurídica garantizada sin verificar los requisitos aplicables.
+No ignores los wireframes ni las historias de usuario adjuntas.
+Si encuentras una limitación de la plataforma de desarrollo, busca una alternativa técnica que conserve la funcionalidad del sistema.
+19. CRITERIOS DE ACEPTACIÓN FINAL
+Considera el proyecto terminado únicamente cuando:
+La aplicación tenga una interfaz profesional.
+React y TypeScript estén correctamente implementados.
+La navegación funcione.
+Los seis roles estén contemplados.
+La autenticación esté integrada con Supabase.
+La base de datos SQL esté estructurada.
+Las relaciones entre tablas sean correctas.
+Las políticas RLS estén implementadas.
+Las observaciones puedan registrarse y consultarse.
+Los folios digitales funcionen.
+Los acudientes estén vinculados correctamente.
+Los documentos puedan gestionarse de forma segura.
+Los informes puedan generarse.
+Las funcionalidades principales estén conectadas al backend.
+La aplicación sea responsive.
+Exista documentación para instalar y desplegar.
+20. INSTRUCCIÓN FINAL
+Quiero que desarrolles Observador Virtual como un producto de software institucional real, no como una simple tarea escolar visual.
+La prioridad es conseguir un equilibrio entre:
+Calidad técnica.
+Funcionalidad.
+Seguridad.
+Diseño visual.
+Facilidad de uso.
+Coherencia con los requerimientos institucionales.
+Primero analiza los archivos adjuntos y comprende el proyecto.
+Después establece la arquitectura y desarrolla la aplicación.
+No te limites a describir lo que harías: implementa los archivos, componentes, funcionalidades, servicios, modelos y scripts necesarios.
+Si el entorno permite generar y editar archivos directamente, utiliza esa capacidad para construir el proyecto completo.
+Si existen limitaciones de contexto o de generación, divide la implementación en etapas controladas, conserva la arquitectura y los archivos existentes y continúa hasta completar los entregables.
+Al finalizar, proporciona un informe técnico que indique:
+Qué se desarrolló.
+Qué funcionalidades están operativas.
+Qué tablas se crearon.
+Qué políticas de seguridad se implementaron.
+Qué configuraciones faltan.
+Cómo ejecutar el proyecto.
+Cómo conectarlo a Supabase.
+Qué aspectos requieren validación institucional.
+RESULTADO ESPERADO: OBSERVADOR VIRTUAL, una plataforma web integral, segura, moderna y funcional para la gestión digital de la convivencia escolar del Instituto Universitario de Caldas.

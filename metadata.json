@@ -1,0 +1,6 @@
+{
+  "name": "Observador Virtual - Instituto Universitario de Caldas",
+  "description": "Sistema digital de convivencia escolar del Instituto Universitario de Caldas para gestión de observaciones, folios digitales, firmas virtuales y reportes disciplinarios.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
